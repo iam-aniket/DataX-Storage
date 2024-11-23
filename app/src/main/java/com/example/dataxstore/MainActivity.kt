@@ -16,15 +16,10 @@ import com.example.dataxstore.ui.theme.DataXStoreTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         setContent {
             DataXStoreTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                    CoinDetailsScreen(MainViewModel(DataStoreRepository(applicationContext)))
             }
         }
     }
